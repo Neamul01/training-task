@@ -13,10 +13,6 @@ function App() {
     expressDelivery: "expressDelivery",
   };
 
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
-
   const tabContent = {
     allOrders: <AllOrders />,
     regularDelivery: <RegularDelivery />,
@@ -25,12 +21,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h2 className="heading">Advance React Training Task</h2>
         <div className="inner-container">
           <div>
             {/* Tab buttons */}
             <div>
               <button
-                onClick={() => handleTabClick(tabs.allOrders)}
+                onClick={() => setActiveTab(tabs.allOrders)}
                 className={`${
                   activeTab === tabs.allOrders
                     ? "active-button"
@@ -40,7 +37,7 @@ function App() {
                 All Orders
               </button>
               <button
-                onClick={() => handleTabClick(tabs.regularDelivery)}
+                onClick={() => setActiveTab(tabs.regularDelivery)}
                 className={`${
                   activeTab === tabs.regularDelivery
                     ? "active-button"
@@ -50,7 +47,7 @@ function App() {
                 Regular Delivery
               </button>
               <button
-                onClick={() => handleTabClick(tabs.expressDelivery)}
+                onClick={() => setActiveTab(tabs.expressDelivery)}
                 className={`${
                   activeTab === tabs.expressDelivery
                     ? "active-button"

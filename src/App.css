@@ -12,9 +12,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 .inner-container {
@@ -43,4 +47,11 @@
 
 .tab-contents {
   margin-top: 1rem;
+}
+
+/* // table styles */
+.table-header {
+  font-size: 2rem;
+  text-decoration: underline;
+  font-weight: normal;
 }
