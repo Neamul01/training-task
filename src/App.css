@@ -18,7 +18,7 @@
 }
 
 .inner-container {
-  padding: 0.8rem;
+  padding: 1.5rem 2rem;
   background-color: aliceblue;
   color: var(--background-color);
   border-radius: 0.5rem;
@@ -26,14 +26,21 @@
 }
 
 .order-tab {
+  font-size: 1rem;
   padding: 1rem;
   margin-right: 0.2rem;
   border: 1px solid var(--background-color);
   border-radius: 0.4rem;
+  background: transparent;
   box-shadow: none;
+  cursor: pointer;
 }
 
 .active-button {
   background: var(--background-color);
   color: white;
+}
+
+.tab-contents {
+  margin-top: 1rem;
 }

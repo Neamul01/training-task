@@ -1,40 +1,48 @@
 import "./App.css";
 import { useState } from "react";
+import AllOrders from "./components/AllOrders";
+import RegularDelivery from "./components/RegularDelivery";
+import ExpressDelivery from "./components/ExpressDelivery";
 
 function App() {
-  // State to keep track of the active tab
   const [activeTab, setActiveTab] = useState("allOrders");
 
-  // Function to handle tab click
+  const tabs = {
+    allOrders: "allOrders",
+    regularDelivery: "regularDelivery",
+    expressDelivery: "expressDelivery",
+  };
+
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
-  // Content for each tab
   const tabContent = {
-    allOrders: <div>All Orders</div>,
-    regularDelivery: <div>Regular Delivery</div>,
-    expressDelivery: <div>Express Delivery</div>,
+    allOrders: <AllOrders />,
+    regularDelivery: <RegularDelivery />,
+    expressDelivery: <ExpressDelivery />,
   };
   return (
     <div className="App">
       <header className="App-header">
         <div className="inner-container">
           <div>
+            {/* Tab buttons */}
             <div>
-              {/* Tab buttons */}
               <button
-                onClick={() => handleTabClick("allOrders")}
+                onClick={() => handleTabClick(tabs.allOrders)}
                 className={`${
-                  activeTab === "allOrders" ? "active-button" : "general-button"
+                  activeTab === tabs.allOrders
+                    ? "active-button"
+                    : "general-button"
                 } order-tab`}
               >
                 All Orders
               </button>
               <button
-                onClick={() => handleTabClick("regularDelivery")}
+                onClick={() => handleTabClick(tabs.regularDelivery)}
                 className={`${
-                  activeTab === "regularDelivery"
+                  activeTab === tabs.regularDelivery
                     ? "active-button"
                     : "general-button"
                 } order-tab`}
@@ -42,9 +50,9 @@ function App() {
                 Regular Delivery
               </button>
               <button
-                onClick={() => handleTabClick("expressDelivery")}
+                onClick={() => handleTabClick(tabs.expressDelivery)}
                 className={`${
-                  activeTab === "expressDelivery"
+                  activeTab === tabs.expressDelivery
                     ? "active-button"
                     : "general-button"
                 } order-tab`}
@@ -53,10 +61,8 @@ function App() {
               </button>
             </div>
 
-            <div>
-              {/* Selected tab content */}
-              {tabContent[activeTab]}
-            </div>
+            {/* Selected tab content */}
+            <div className="tab-contents">{tabContent[activeTab]}</div>
           </div>
         </div>
       </header>
