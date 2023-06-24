@@ -56,10 +56,6 @@
   font-weight: normal;
 }
 
-.order-table {
-  max-width: 40rem;
-}
-
 .order-table-head tr th {
   font-size: 1.5rem;
   font-weight: 600;
@@ -99,4 +95,35 @@
 .pagination-button {
   background-color: rgba(190, 190, 190, 0.233);
 }
-/* @media */
+@media screen and (max-width: 484px) {
+  .inner-container {
+    padding: 1.5rem 0.2rem;
+  }
+
+  .order-tab {
+    font-size: 1rem;
+    padding: 0.6rem;
+    margin: 0.2rem;
+  }
+
+  .order-table-box {
+    max-width: 19rem;
+    margin: 0 auto;
+    overflow: scroll;
+  }
+
+  .order-table-head tr th {
+    font-size: 1.2rem;
+  }
+
+  .order-table tbody tr td {
+    font-size: 1rem;
+  }
+}
+/* Large screens (992px and above) */
+/* @media screen and (min-width: 992px) {
+  .order-table-box {
+    width: 10rem;
+    overflow-x: scroll;
+  }
+} */

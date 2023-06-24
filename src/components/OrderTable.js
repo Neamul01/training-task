@@ -32,12 +32,15 @@ const OrderTable = ({ data }) => {
         </button>
       );
     }
+    if (paginationButtons.length > 3) {
+      paginationButtons.splice(paginationButtons.length - 1, 0, "....");
+    }
 
     return paginationButtons;
   };
 
   return (
-    <div>
+    <div className="order-table-box">
       <table className="order-table">
         <thead className="order-table-head">
           <tr>
