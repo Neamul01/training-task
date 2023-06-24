@@ -21,7 +21,13 @@ const OrderTable = ({ data }) => {
 
     for (let i = 1; i <= pageNumbers; i++) {
       paginationButtons.push(
-        <button key={i} onClick={() => handlePageChange(i)}>
+        <button
+          key={i}
+          onClick={() => handlePageChange(i)}
+          className={`${
+            currentPage === i ? "active-pagination-button" : "pagination-button"
+          }`}
+        >
           {i}
         </button>
       );
@@ -31,29 +37,33 @@ const OrderTable = ({ data }) => {
   };
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Order ID</th>
-          <th>Customer</th>
-          <th>Delivery Type</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        {currentOrders.map((order) => (
-          <tr key={order.id}>
-            <td>{order.id}</td>
-            <td>{order.customer}</td>
-            <td>{order.deliveryType}</td>
-            <td>{order.total}</td>
+    <div>
+      <table className="order-table">
+        <thead className="order-table-head">
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Delivery Type</th>
+            <th>Total</th>
           </tr>
-        ))}
-      </tbody>
-
+        </thead>
+        <tbody className="table-body">
+          {currentOrders.map((order, i) => (
+            <tr
+              key={order.id}
+              className={`${i % 2 === 0 && "styled-row"} table-row`}
+            >
+              <td>{order.id}</td>
+              <td>{order.customer}</td>
+              <td>{order.deliveryType}</td>
+              <td>{order.total}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       {/*  pagination */}
-      <div>{renderPagination()}</div>
-    </table>
+      <div className={`order-table-pagination`}>{renderPagination()}</div>
+    </div>
   );
 };
 

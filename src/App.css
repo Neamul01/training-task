@@ -55,3 +55,48 @@
   text-decoration: underline;
   font-weight: normal;
 }
+
+.order-table {
+  max-width: 40rem;
+}
+
+.order-table-head tr th {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 1rem;
+  padding-bottom: 0.8rem;
+}
+
+.order-table tbody .styled-row {
+  background: #8686863b;
+  border-radius: 0.3rem;
+}
+
+.order-table tbody tr td {
+  font-size: 1.2rem;
+  padding: 0.4rem;
+}
+
+/* pagination */
+.order-table-pagination {
+  width: 100%;
+  margin: 1rem auto 0 auto;
+}
+
+.order-table-pagination button {
+  padding: 0.3rem 0.5rem;
+  margin: 0 0.2rem;
+  box-shadow: none;
+  border: 1px solid var(--background-color);
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.active-pagination-button {
+  background-color: var(--background-color);
+  color: white;
+}
+.pagination-button {
+  background-color: rgba(190, 190, 190, 0.233);
+}
+/* @media */
